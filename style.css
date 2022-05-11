@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #25272A;
+    color: #fff;
+}
+
+input[type="radio"],
+input[type="radio"]:not(:checked) ~ .slider_controls {
+    display: none;
+}
+
+input[type="radio"]:not(:checked) ~ .slide_img,
+input[type="radio"]:not(:checked) ~ .slide_img img,  
+input[type="radio"]:not(:checked) ~ .slide_bottom,
+input[type="radio"]:not(:checked) ~ .slide_bottom p {    
+    max-height: 0px;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.slider_controls {
+    display: inline-flex;
+}
+
+
+.slider_container {
+    max-width: 50vw;
+    margin: 0 auto;
+}
+
+.slide_img {
+    height: 450px;
+}
+
+.slide_img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: 450px;
+    object-fit: cover;
+    opacity: 1;
+    border-radius: 10px;
+    transition: max-height .3s linear;
+}
+
+.slide_bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.slide p {
+    opacity: 1;
+    transition: opacity .5s linear;
+}
+
+.slider_controls label {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.slider_controls label .dot {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid #72AFE4;
+    background-color: #72AFE4;
+    transition: all .2s ease-in-out;
+}
+
+.slider_controls label:hover .dot {
+    border: 2px solid #fff;
+    background-color: #fff;
+}
+
+.slider_controls label:active .dot {
+    transform: scale(1.5);
+}
+
+.slider_controls label.active .dot {
+    background-color: transparent;
+}
