@@ -1,3 +1,9 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #25272A;
@@ -13,7 +19,7 @@ input[type="radio"]:not(:checked) ~ .slide_img,
 input[type="radio"]:not(:checked) ~ .slide_img img,  
 input[type="radio"]:not(:checked) ~ .slide_bottom,
 input[type="radio"]:not(:checked) ~ .slide_bottom p {    
-    max-height: 0px;
+    max-height: 0vh;
     margin: 0;
     padding: 0;
     line-height: 0;
@@ -32,42 +38,42 @@ input[type="radio"]:not(:checked) ~ .slide_bottom p {
 }
 
 .slide_img {
-    height: 450px;
+    height: 80vh;
 }
 
 .slide_img img {
     display: block;
     width: 100%;
     height: 100%;
-    max-height: 450px;
+    max-height: 80vh;
     object-fit: cover;
     opacity: 1;
-    border-radius: 10px;
+    border-radius: 3%;
     transition: max-height .3s linear;
 }
 
 .slide_bottom {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    margin-top: 15px;
+    margin-top: 3%;
 }
 
 .slide p {
     opacity: 1;
-    margin-right: 15px;
+    margin: 0;
+    margin-right: 3%;
     transition: opacity 2s ease;
 }
 
 .slider_controls label {
-    padding: 10px 5px;
+    padding: 0 .4vw .8vw .4vw;
     cursor: pointer;
 }
 
 .slider_controls label .dot {
     display: block;
-    width: 10px;
-    height: 10px;
+    width: 1vw;
+    height: 1vw;
     border-radius: 50%;
     border: 2px solid #72AFE4;
     background-color: #72AFE4;
@@ -85,4 +91,38 @@ input[type="radio"]:not(:checked) ~ .slide_bottom p {
 
 .slider_controls label.active .dot {
     background-color: transparent;
+}
+
+@media (max-width: 768px) {
+    .slider_container {
+        max-width: 90vw;
+        margin: 0 auto;
+    }
+
+    .slide_img {
+        height: 50vh;
+    }
+    
+    .slide_img img {
+        max-height: 50vh;
+    }
+
+    .slide_bottom {
+        flex-direction: column-reverse;
+    }
+
+    .slider_controls {
+        align-self: center;
+        margin: 5% 0;
+    }
+
+    .slider_controls label {
+        padding: 3vw 2vw 3vw 2vw;
+    }
+
+    .slider_controls label .dot {
+        width: 2.5vw;
+        height: 2.5vw;
+        align-self: center;
+    }    
 }
